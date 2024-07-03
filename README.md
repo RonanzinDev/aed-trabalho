@@ -1,7 +1,7 @@
 # Trabalho AED
 
 ### Para Rodar
-Clone o projeto
+Clone o projeto `git clone `
 
 Instale os pacotes `dotnet restore`
 

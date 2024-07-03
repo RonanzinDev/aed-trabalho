@@ -23,6 +23,7 @@ public class TabelaHash {
     tamanho = tam;
     items = new Tabela[tam];
   }
+  // Funcao de hash DJB2 simples e eficiente
   public int Hash(string chave)  {
     ulong hash = 5381;
     foreach(char c in chave) {
@@ -30,12 +31,14 @@ public class TabelaHash {
     }
     return (int)(hash % (ulong)tamanho);
   }
+  // Função para inserir
   public void Inserir(string chave, string valor) {
     int pos = Hash(chave);
     Tabela t = new Tabela(chave, valor, items[pos]);
     items[pos] = t;
   }
-  public string buscar(string chave) {
+  // Função para buscar um elemento
+  public string Buscar(string chave) {
     int pos = Hash(chave);
     Tabela aux = items[pos];
     while(aux != null) {
